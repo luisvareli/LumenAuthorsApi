@@ -13,6 +13,10 @@
 |
 */
 
+$router->get('/', function () use ($router) {
+    return $router->app->version();
+});
+
 $router->get('/authors', 'AuthorController@index');
 $router->post('/authors', 'AuthorController@store');
 $router->get('/authors/{author}', 'AuthorController@show');
